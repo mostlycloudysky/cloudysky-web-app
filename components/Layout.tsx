@@ -19,7 +19,7 @@ function Layout({title, keywords, description, children}: Props) {
               <link rel="icon" href="/favicon.ico" />
           </Head>
           {/* <Header /> */}
-          <main className="max-w-5xl mx-auto">{children}</main>
+          <main className="max-w-4xl mx-auto">{children}</main>
       </div>
     )
   }
