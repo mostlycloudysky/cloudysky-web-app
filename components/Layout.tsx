@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from "next/head"
 // import Header from "./Header"
+import { Inter } from '@next/font/google'
+const inter = Inter({ subsets: ['Poppins'], weight: ['400', '700'], display: 'swap' })
 
 interface Props {
     title: string,
@@ -11,7 +13,7 @@ interface Props {
 
 function Layout({title, keywords, description, children}: Props) {
     return (
-      <div>
+      <div className={inter.className}>
           <Head>
               <title>{title}</title>
               <meta name="keyword" content={keywords} />
@@ -19,7 +21,7 @@ function Layout({title, keywords, description, children}: Props) {
               <link rel="icon" href="/favicon.ico" />
           </Head>
           {/* <Header /> */}
-          <main className="max-w-5xl mx-auto">{children}</main>
+          <main className="max-w-3xl mx-auto">{children}</main>
       </div>
     )
   }
