@@ -8,15 +8,8 @@ const Home: NextPage = () => {
   return (
     <Layout title='Cloudysky home page'>
       <Header></Header>
-      <div className="">
-        <main className="">
-         <h1>Main content</h1>
-        </main>
+        <h1 className='pl-5 pt-2'>Home Page</h1>
 
-        <footer className="">
-          <h1>Footer</h1>
-        </footer>
-      </div>
     </Layout>
 
   )
