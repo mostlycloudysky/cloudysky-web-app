@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from "next/head"
-// import Header from "./Header"
 import { Inter } from '@next/font/google'
 const inter = Inter({ subsets: ['Poppins'], weight: ['400', '700'], display: 'swap' })
 
