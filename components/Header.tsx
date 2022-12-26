@@ -21,7 +21,7 @@ function Header() {
           <h3 className='border px-4 py-1 rounded-full border-green-600'>Visitors Log</h3>
         </div>
         <div className='flex items-center space-x-4'>
-          <h1 className=' border px-4 py-1 rounded-full border-green-600'>Get Started</h1>
+          <h3 className=' border px-4 py-1 rounded-full border-green-600'>Get Started</h3>
           <SunIcon className='h-6 w-6 text-yellow-500' />
         </div>
       {/* </div> */}
