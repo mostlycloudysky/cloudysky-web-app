@@ -45,9 +45,7 @@ function SpotifyPlaying({text}: Props) {
     "https://api.github.com/repos/vercel/swr",
     fetcher
   );
-
-  console.log(data)
-
+  
   // if (error) return "An error has occurred.";
   // if (!data) return "Loading...";
 
