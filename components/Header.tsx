@@ -20,7 +20,7 @@ function NavItem({href, text}: Props) {
   return (
     <Link 
       href={href}
-      className={cn(isActive ? 'font-semibold text-green-600 border-b-2 border-green-600 px-1 pt-1' : ' font-normal', 'text-gray-600 cursor-pointer text-lg hover:text-gray-700')} >
+      className={cn(isActive ? 'font-semibold text-green-600 border-b-4 border-green-600' : ' font-normal', 'text-gray-600 cursor-pointer text-lg hover:text-gray-700')} >
       <span className="">{text}</span>
     </Link>
   )
@@ -66,7 +66,6 @@ function Header() {
   }
 
   // Dark mode toggle code ends here
-
   return (
     <>
      <header className='flex items-center justify-between pl-5 pt-5 pb-2 pr-5'>
@@ -76,13 +75,12 @@ function Header() {
           <NavItem href='/snippets' text='Snippets' />
           <NavItem href='/visitor' text='Visitors Log' />   
         </div>
-        <div className='flex items-center space-x-4'>
-          {/* <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>Getting Started</h3> */}
-          <SpotifyPlaying text='Playlist' />
+          <div className='flex items-center space-x-4'>
+            <SpotifyPlaying text='Playlist' />
           <div>{renderThemeChanger()}</div>
         </div>
     </header>
-    <div className='border-b-[1px] border-muted ml-5 mr-5'></div>
+      <div className='border-b-[1px] border-muted ml-5 mr-5'></div>
     </>
    
   )
