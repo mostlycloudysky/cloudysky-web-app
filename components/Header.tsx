@@ -6,6 +6,7 @@ import {SunIcon} from '@heroicons/react/solid'
 import {MoonIcon} from '@heroicons/react/solid'
 import {useTheme} from 'next-themes'
 import {useState, useEffect} from 'react'
+import SpotifyPlaying from './SpotifyPlaying';
 
 interface Props {
   href: string,
@@ -76,7 +77,8 @@ function Header() {
           <NavItem href='/visitor' text='Visitors Log' />   
         </div>
         <div className='flex items-center space-x-4'>
-          <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>Getting Started</h3>
+          {/* <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>Getting Started</h3> */}
+          <SpotifyPlaying text='music' />
           <div>{renderThemeChanger()}</div>
         </div>
     </header>
