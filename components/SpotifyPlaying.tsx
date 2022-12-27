@@ -56,7 +56,7 @@ function SpotifyPlaying({text}: Props) {
       { data ? (
         <>
           <MusicPlaying />
-          <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>{text}</h3>
+          <h3 className=' border px-3 rounded-full py-1 font-normal text-base cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>{text}</h3>
         </>
 
       ) : (<div>Not playing</div>)}
