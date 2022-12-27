@@ -78,7 +78,7 @@ function Header() {
         </div>
         <div className='flex items-center space-x-4'>
           {/* <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>Getting Started</h3> */}
-          <SpotifyPlaying text='music' />
+          <SpotifyPlaying text='Playlist' />
           <div>{renderThemeChanger()}</div>
         </div>
     </header>

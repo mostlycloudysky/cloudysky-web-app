@@ -1,22 +1,28 @@
 import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
+import useSWR from 'swr'
+import Link from 'next/link'
+
+interface Props {
+  text: string
+}
 
 // Framer Motion music playing
 function MusicPlaying() {
     return (
     <AnimatePresence>
-      <div className="">
+      <div className="flex items-end justify-end h-3 gap-[2px]">
         {[0, 1, 2].map((e) => (
           <motion.span
             key={e}
-            className="bg-[#1ED760]"
+            className="bg-green-600"
             initial={{
               height: 5,
               width: 5,
             }}
             animate={{
               width: 5,
-              height: [5, 12, 5],
+              height: [5, 13, 5],
             }}
             transition={{
               type: "spring",
@@ -30,20 +36,30 @@ function MusicPlaying() {
   );
 }
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function SpotifyPlaying({text}) {
 
-  const isPlaying = true
+function SpotifyPlaying({text}: Props) {
+
+  const { data, error } = useSWR(
+    "https://api.github.com/repos/vercel/swr",
+    fetcher
+  );
+
+  console.log(data)
+
+  // if (error) return "An error has occurred.";
+  // if (!data) return "Loading...";
 
    return (
     <>
-      { isPlaying ? (
+      { data ? (
         <>
           <MusicPlaying />
-          <h1>{text}</h1>
+          <h3 className=' border px-3 rounded-full py-1  cursor-pointer  border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>{text}</h3>
         </>
 
-      ) : (<h1>Is not playing</h1>)}
+      ) : (<div>Not playing</div>)}
     </>
    )
 }
