@@ -7,6 +7,7 @@ import {EyeIcon} from '@heroicons/react/outline'
 import Profile from '../components/Profile'
 import FeaturedPosts from '../components/FeaturedPosts'
 import Link from 'next/link'
+import SnippetsCard from '../components/SnippetsCard'
 
 
 const Home: NextPage = () => {
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
         <FeaturedPosts />
         <Link
             href="/blogs"
-            className="flex items-center  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
+            className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
           >
             <>
               {'See all posts'}
@@ -45,6 +46,10 @@ const Home: NextPage = () => {
               </svg>
             </>
         </Link>
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+          Snippets
+        </h3>
+        <SnippetsCard />
       </div>
     </Layout>
 
