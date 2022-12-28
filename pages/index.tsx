@@ -25,8 +25,8 @@ const Home: NextPage = () => {
                   <div><SocialIcon url="https://github.com/SandeepKumarYaramchitti" style={{ height: 40, width: 40 }} /></div>
                   <div><SocialIcon url="https://mail.google.com/mail/u/0/#inbox" style={{ height: 40, width: 40 }} /></div>
                   <div><SocialIcon url="https://medium.com/@sandeepkumary" style={{ height: 40, width: 40 }} /></div>
-                  <div><SocialIcon url="https://dev.to/sandeepkumaryaramchitti" style={{ height: 40, width: 40 }} /></div>
-                  <div><SocialIcon url="https://hashnode.com/@sandeep1117" style={{ height: 40, width: 40 }} /></div>
+                  {/* <div><SocialIcon url="https://dev.to/sandeepkumaryaramchitti" style={{ height: 40, width: 40 }} /></div>
+                  <div><SocialIcon url="https://hashnode.com/@sandeep1117" style={{ height: 40, width: 40 }} /></div> */}
                 </div>
             </div>
           </div>
