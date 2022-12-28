@@ -9,7 +9,7 @@ function Profile() {
               src="/avatar.jpg" />
             <div className='pt-5 pl-8'>
                 <h2 className="font-bold text-4xl md:text-4xl tracking-tight mb-1 text-black dark:text-white">
-                  <span>Sandeep Yaramchitti</span> 
+                  <span className=' bg-sky-200 dark:bg-sky-800'>Sandeep Yaramchitti</span> 
                 </h2>
                 <h2 className="text-gray-700 dark:text-gray-200 mb-4">
                   Code my ideas into life through Software Development.
