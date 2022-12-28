@@ -80,7 +80,7 @@ function Header() {
           <div>{renderThemeChanger()}</div>
         </div>
     </header>
-      <div className='border-b-[1px] border-muted ml-5 mr-5'></div>
+      <div className='border-b-[1px] border-muted ml-5 mr-5 '></div>
     </>
    
   )
