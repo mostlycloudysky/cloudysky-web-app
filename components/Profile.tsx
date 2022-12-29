@@ -12,7 +12,7 @@ function Profile() {
                   <span className=' bg-sky-200 dark:bg-sky-800'>Sandeep Yaramchitti</span> 
                 </h2>
                 <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-                  Code my ideas into life through Software Development.
+                  Brining my ideas into life through Code.
                 </h2>
                 <div className=' flex items-center space-x-3'>
                   <div><SocialIcon url="https://linkedin.com/in/jaketrent" style={{ height: 40, width: 40 }} /></div>
