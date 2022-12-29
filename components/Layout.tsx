@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from "next/head"
 import { Inter } from '@next/font/google'
-const inter = Inter({ subsets: ['Poppins'], weight: ['400', '700'], display: 'swap' })
+const inter = Inter({ subsets: ['Noto Sans'], weight: ['400', '700'], display: 'swap' })
 interface Props {
     title: string,
     keywords: string,
@@ -20,6 +20,8 @@ function Layout({title, keywords, description, children}: Props) {
           </Head>
           {/* <Header /> */}
           <main className="max-w-2xl mx-auto">{children}</main>
+          {/* Place holder for footer */}
+          {/* <div className="max-w-2xl mx-auto pl-5 pr-5">test</div>  */}
       </div>
     )
   }
