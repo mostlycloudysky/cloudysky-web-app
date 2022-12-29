@@ -20,7 +20,7 @@ function NavItem({href, text}: Props) {
   return (
     <Link 
       href={href}
-      className={cn(isActive ? 'font-semibold text-lg text-green-600 border-b-4 border-green-600' : ' font-normal, text-lg text-gray-600 cursor-pointer  hover:text-green-600')} >
+      className={cn(isActive ? 'font-semibold text-lg text-green-600 border-b-4 border-green-600' : ' font-normal, text-lg text-gray-600 dark:text-gray-300 cursor-pointer  hover:text-green-600')} >
       <span className="">{text}</span>
     </Link>
   )
