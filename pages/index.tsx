@@ -13,7 +13,7 @@ import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
-    <Layout title='Cloudysky home page'>
+    <Layout title='CloudyS.K.Y - Home'>
       <Header />
       {/* Header and profile bio */}
       <Profile />

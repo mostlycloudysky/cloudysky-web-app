@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from "next/head"
 import { Inter } from '@next/font/google'
+import Footer from './Footer'
 const inter = Inter({ subsets: ['Noto Sans'], weight: ['400', '700'], display: 'swap' })
 interface Props {
     title: string,
