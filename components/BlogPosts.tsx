@@ -1,6 +1,6 @@
 import React from 'react'
 import {EyeIcon} from '@heroicons/react/outline'
-import { FaDev, FaGithub, FaLinkedinIn } from 'react-icons/fa'
+
 function BlogPosts() {
   return (
     <>
