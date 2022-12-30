@@ -14,6 +14,7 @@ function BlogPosts() {
           parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra
           congue risus.
         </p>
+        
         {/* Tags */}
         <div className='mt-2 flex items-center justify-between'>
           <div className='flex items-center space-x-2'>
