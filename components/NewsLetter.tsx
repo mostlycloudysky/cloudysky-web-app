@@ -2,8 +2,8 @@ import React from 'react'
 
 function NewsLetter() {
   return (
-        <>  
-      <div className="border border-hightlight-high rounded p-6 my-4 w-full mb-5">
+    <>  
+      <div className="border border-hightlight-high rounded p-6 my-4 w-full mb-5 bg-sky-100 dark:bg-sky-900">
         <p className="text-lg md:text-xl font-bold">
           Subscribe to My Newsletter
         </p>

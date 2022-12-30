@@ -1,17 +1,19 @@
 import React from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
-import SocialSignIn from '../components/SocialSignin';
+import VisitorLogs from '../components/VisitorLogs';
+import NewsLetter from '../components/NewsLetter';
 
 
 
 function visitor() {
   return (
     <>
-    <Layout>
+    <Layout title='CloudyS.K.Y - Visitors Log'>
       <Header></Header>
-        <h1 className='pl-5 pt-2'>Visitor Page</h1>
-        <SocialSignIn />
+        <div className='pt-5 pl-5 pr-5'>
+          <VisitorLogs />
+        </div>
     </Layout>
     </>
   )
