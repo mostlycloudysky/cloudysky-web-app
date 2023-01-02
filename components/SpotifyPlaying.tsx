@@ -2,9 +2,25 @@ import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import useSWR from 'swr'
 import Link from 'next/link'
+import cn from 'classnames';
+import { useRouter } from 'next/router';
+
 
 interface Props {
   text: string
+}
+
+function NavItem({href, text}: Props) {
+  const router = useRouter()
+  const isActive = router.asPath === href
+
+  return (
+    <Link 
+      href={href}
+      className={cn(isActive ? 'font-normal text-base border px-3 rounded-full py-1 cursor-pointer pt-1 bg-green-600 text-white' : ' border px-3 rounded-full py-1 font-normal text-base cursor-pointer pt-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white')} >
+      <span className="">{text}</span>
+    </Link>
+  )
 }
 
 // Framer Motion music playing
@@ -54,7 +70,9 @@ function SpotifyPlaying({text}: Props) {
       { data ? (
         <>
           <MusicPlaying />
-          <h3 className=' border px-3 rounded-full py-1 font-normal text-base cursor-pointer pt-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white  '>{text}</h3>
+          <NavItem href='/playlist' text='Playlist' />
+
+          {/* <Link href='/playlist' className='border px-3 rounded-full py-1 font-normal text-base cursor-pointer pt-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white'>Playlist</Link> */}
         </>
 
       ) : (<div>Not playing</div>)}
