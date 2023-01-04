@@ -2,10 +2,11 @@ import React from 'react'
 import {EyeIcon} from '@heroicons/react/outline'
 function FeaturedPosts() {
   return (
-          <div className='border bg-surface rounded border-gray-200 p-3 mb-3 overflow-hidden hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer'>
+          <div className='border bg-surface rounded border-gray-200 p-3 mb-3 overflow-hidden'>
             {/* Blog Content */}
             <div className=''>
-              <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight '>A TailwindCSS made blog post</p>
+              <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline'>A TailwindCSS made blog post</p>
+              <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>Dec 28, 2022</span> .Published in Medium, DevTo and HashNode</p> 
               <p className="mt-3 mb-4 text-md font-normal text-skin-base ">
                 Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae
                 parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra
