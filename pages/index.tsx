@@ -9,9 +9,11 @@ import Link from 'next/link'
 import SnippetsCard from '../components/SnippetsCard'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
+import {sanityClient, urlFor} from '../sanity'
 
 
-const Home: NextPage = () => {
+export default function Home(props) {
+  console.log('props', props)
   return (
     <Layout title='CloudyS.K.Y - Home'>
       <Header />
@@ -88,4 +90,26 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == 'post']{
+    _id,
+    title,
+    author -> {
+      name,
+      image
+    },
+      description,
+      mainImage,
+      slug, 
+  }`;
+
+  const posts = await sanityClient.fetch(query);
+  return {
+    props: {
+      posts,
+    }
+  }
+
+};
