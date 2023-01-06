@@ -17,7 +17,7 @@ interface Props {
   posts: [Post]
 }
 
-export default function Home({ posts}: Props) {
+export default function Home({ posts }: Props) {
 
   
   console.log('props', posts)
@@ -31,9 +31,11 @@ export default function Home({ posts}: Props) {
         <h3 className=" font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
           Featured Blogs
         </h3>
-        <FeaturedPosts />
-        <FeaturedPosts />
-        <FeaturedPosts />
+        {posts.map((post) => (
+            <FeaturedPosts post={post} key={post._id} />
+        ))}
+        {/* <FeaturedPosts />
+        <FeaturedPosts /> */}
         <Link
             href="/blogs"
             className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
@@ -103,6 +105,10 @@ export const getServerSideProps = async () => {
   const query = `*[_type == 'post' && Featured == true]{
     _id,
     title,
+    _createdAt,
+    categories[0] -> {
+      title
+    },
     author -> {
       name,
       image
