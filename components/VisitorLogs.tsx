@@ -47,6 +47,7 @@ function VisitorLogs() {
             aria-label="Email for newsletter"
             placeholder="Enter your comment"
             type="email"
+            value=""
             autoComplete="email"
             required
             className="px-4 py-2 mt-1 mb-5 outline-none block w-full border border-green-600 rounded-md pr-32"
