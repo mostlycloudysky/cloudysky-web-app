@@ -19,8 +19,6 @@ interface Props {
 
 export default function Home({ posts }: Props) {
 
-  
-  console.log('props', posts)
   return (
     <Layout title='CloudyS.K.Y - Home'>
       <Header />

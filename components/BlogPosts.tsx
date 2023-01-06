@@ -1,18 +1,21 @@
 import React from 'react'
 import {EyeIcon} from '@heroicons/react/outline'
+import { Post } from '../typings'
 
-function BlogPosts() {
+interface Props {
+  post: Post
+}
+
+function BlogPosts({post}: Props) {
   return (
     <>
         <div className=' pt-5 pl-5 pr-5 pb-5'>
       {/* Blog Content */}
       <div className=''>
-        <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline '>A TailwindCSS made blog post</p>
-        <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>Dec 28, 2022</span> .Published in Medium, DevTo and HashNode</p> 
+        <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline '>{post.title}</p>
+        <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>{new Date(post._createdAt).toLocaleString()}</span> .Published in Medium, DevTo and HashNode</p> 
         <p className="mt-3 mb-4 text-md font-normal text-skin-base ">
-          Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae
-          parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra
-          congue risus.
+          {post.description}
         </p>
         
         {/* Tags */}
@@ -21,7 +24,8 @@ function BlogPosts() {
             <span
               className="inline-flex items-center leading-none px-2.5 py-1.5 text-sm font-medium text-skin-inverted rounded-full border border-skin-input"
               >
-              Programming
+                {post.categories?.title}
+
             </span>
             <p className=' text-sm font-normal text-skin-base leading-5'>2 mins read</p>  
           </div>
