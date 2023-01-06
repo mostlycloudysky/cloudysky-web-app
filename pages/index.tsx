@@ -11,9 +11,16 @@ import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
 import {sanityClient, urlFor} from '../sanity'
 
+import {Post} from '../typings.d'
 
-export default function Home(props) {
-  console.log('props', props)
+interface Props {
+  posts: [Post]
+}
+
+export default function Home({ posts}: Props) {
+
+  
+  console.log('props', posts)
   return (
     <Layout title='CloudyS.K.Y - Home'>
       <Header />
@@ -93,7 +100,7 @@ export default function Home(props) {
 
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == 'post']{
+  const query = `*[_type == 'post' && Featured == true]{
     _id,
     title,
     author -> {
