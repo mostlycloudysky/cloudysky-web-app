@@ -65,7 +65,7 @@ function blogs({posts}: Props) {
 export default blogs
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == 'post' && Featured != true]{
+  const query = `*[_type == 'post']{
     _id,
     title,
     _createdAt,
