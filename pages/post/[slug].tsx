@@ -7,7 +7,8 @@ import { Post } from '../../typings'
 import { urlFor} from '../../sanity'
 import { EyeIcon } from '@heroicons/react/outline'
 import PortableText from 'react-portable-text'
-import Refractor from 'react-refractor'
+import CodeBlock from '../../components/CodeBlock'
+
 
 interface Props {
   post: Post;
@@ -55,6 +56,7 @@ function Post({post}: Props) {
                 h1: (props: any) => (
                   <h1 className="text-2xl font-bold my-5" {...props} />
                 ),
+
                 h2: (props: any) => (
                   <h1 className="text-xl font-bold my-5" {...props} />
                 ),
@@ -65,7 +67,14 @@ function Post({post}: Props) {
                   <a href={href} className="text-blue-500 hover:underline my-5">
                     {children}
                   </a>
-                )
+                ),
+                codeBlock: (props: any) => {
+                  return (
+                    <div className=' mt-5 mb-5'>
+                      <CodeBlock code={props.code} language={props.language} />  
+                    </div>
+                  ) 
+                },
               }}
             />
           </div>
