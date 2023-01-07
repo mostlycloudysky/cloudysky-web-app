@@ -70,7 +70,7 @@ function Post({post}: Props) {
                 ),
                 codeBlock: (props: any) => {
                   return (
-                    <div className=' mt-5 mb-5'>
+                    <div className=' mt-5 mb-5 text-sm'>
                       <CodeBlock code={props.code} language={props.language} />  
                     </div>
                   ) 
