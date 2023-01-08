@@ -3,8 +3,15 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import BlogPosts from '../components/BlogPosts';
 import Footer from '../components/Footer';
+import {sanityClient, urlFor} from '../sanity'
 
-function blogs() {
+import {Post} from '../typings.d'
+
+interface Props {
+  posts: [Post]
+}
+
+function blogs({posts}: Props) {
   return (
     <>
       <Layout title='CloudyS.K.Y - Blogs'>
@@ -17,7 +24,7 @@ function blogs() {
           <p className="mb-4 text-gray-600 dark:text-gray-400">
             Collection of my blogs, mostly on full stack development, Cloud Native Solutions, DevSecOps and Test Automation. These are also published on Medium, DevTo and HashNode. Use the search filter to search for specific blogs.
           </p>
-                    <div className="relative w-full">
+            <div className="relative w-full">
             <input
               aria-label="Search "
               value=''
@@ -42,8 +49,11 @@ function blogs() {
             </svg>
           </div>
         </div>
-        <BlogPosts />
-        <BlogPosts />
+        {posts.map((post) => (
+          <BlogPosts post={post} key={post._id} />
+
+        ))}
+        {/* <BlogPosts /> */}
         <div className='pl-5 pr-5'>
           <Footer />
         </div>
@@ -53,3 +63,30 @@ function blogs() {
 }
 
 export default blogs
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == 'post']{
+    _id,
+    title,
+    _createdAt,
+    categories[0] -> {
+      title
+    },
+    author -> {
+      name,
+      image
+    },
+      description,
+      mainImage,
+      slug, 
+  }`;
+
+  const posts = await sanityClient.fetch(query);
+  return {
+    props: {
+      posts,
+    }
+  }
+
+};
+
