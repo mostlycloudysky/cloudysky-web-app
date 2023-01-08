@@ -1,6 +1,7 @@
 import React from 'react'
 import {EyeIcon} from '@heroicons/react/outline'
 import { Post } from '../typings'
+import Link from 'next/link'
 
 interface Props {
   post: Post
@@ -12,7 +13,9 @@ function BlogPosts({post}: Props) {
         <div className=' pt-5 pl-5 pr-5 pb-5'>
       {/* Blog Content */}
       <div className=''>
-        <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline '>{post.title}</p>
+        <Link key={post._id} href={`post/${post.slug.current}`}>
+            <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline '>{post.title}</p>        
+        </Link>
         <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>{new Date(post._createdAt).toLocaleString()}</span> .Published in Medium, DevTo and HashNode</p> 
         <p className="mt-3 mb-4 text-md font-normal text-skin-base ">
           {post.description}
