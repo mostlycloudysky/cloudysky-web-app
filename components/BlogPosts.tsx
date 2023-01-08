@@ -14,7 +14,7 @@ function BlogPosts({post}: Props) {
       {/* Blog Content */}
       <div className=''>
         <Link key={post._id} href={`post/${post.slug.current}`}>
-            <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline '>{post.title}</p>        
+            <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline decoration-green-600 '>{post.title}</p>        
         </Link>
         <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>{new Date(post._createdAt).toLocaleString()}</span> .Published in Medium, DevTo and HashNode</p> 
         <p className="mt-3 mb-4 text-md font-normal text-skin-base ">
