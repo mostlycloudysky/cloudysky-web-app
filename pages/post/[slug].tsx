@@ -5,7 +5,7 @@ import { sanityClient } from '../../sanity'
 import { GetStaticProps } from 'next'
 import { Post } from '../../typings'
 import { urlFor} from '../../sanity'
-import { EyeIcon } from '@heroicons/react/outline'
+import { EyeIcon } from '@heroicons/react/solid'
 import PortableText from 'react-portable-text'
 import CodeBlock from '../../components/CodeBlock'
 
@@ -25,30 +25,26 @@ function Post({post}: Props) {
             src={urlFor(post.mainImage).url()!}
             className='w-full h-40 object-cover mb-2'
           /> 
-          <h4 className='w-full mb-2 text-2xl font-medium text-gray-900 md:text-2xl dark:text-gray-100'>{post.title}</h4>
-          <p className="mt-3 mb-4 text-md font-normal text-skin-base ">
-            {post.description}
-          </p>
-          <div className='border-b-[1px] border-green-600 border-muted mb-5'></div>
-          
-
-          <div className=' flex items-center justify-between mb-5'>
+          <h4 className='w-full mb-1 text-2xl font-medium text-gray-900 md:text-2xl dark:text-gray-100'>{post.title}</h4>
+          <div className=' flex items-center justify-between text-green-600'>
             <div className=' flex items-center'>
-              <img src={urlFor(post.author.image).url()!} className='w-10 h-10 rounded-full' />
-              <h4 className='pl-1 font-normal text-md text-gray-900 dark:text-gray-100 text-skin-base'>{post.author.name} - </h4>
-              <h4 className=' font-normal text-md text-gray-900 dark:text-gray-100'> {new Date(post._createdAt).toLocaleDateString()}</h4>
+              <p className=' text-sm font-normal text-skin-base leading-5 pb-1'><span className=''>{new Date(post._createdAt).toLocaleDateString() }</span>, Published in Medium, DevTo and HashNode</p> 
             </div>
             <div className=' flex items-center space-x-2'>
-              <h4 className=' font-normal text-md text-gray-900 dark:text-gray-100'>. 2 mins read</h4>  
+              <p className=' text-sm font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>.2 mins read</span></p> 
               <div className='flex items-center space-x-1 mr-5 pr-5'>
-                <EyeIcon className='h-5 w-5 text-gray-900 dark:text-gray-100' />
-                  <h4 className=' font-normal text-md text-gray-900 dark:text-gray-100'>100</h4>  
+                <EyeIcon className='h-5 w-5 text-gray-600 dark:text-gray-100' /> 
+                  <p className=' text-sm font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>200</span></p> 
               </div>
             </div>
           </div>
+          <p className="mt-3 mb-3 text-md font-normal text-skin-base text-gray-800 dark:text-gray-100 ">
+            {post.description}
+          </p>
+          <div className='border-b-[1px] border-green-600 border-muted'></div>
           <div>
             <PortableText
-              className='mt-10'
+              className='mt-5'
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
@@ -59,6 +55,9 @@ function Post({post}: Props) {
 
                 h2: (props: any) => (
                   <h1 className="text-xl font-bold my-5" {...props} />
+                ),
+                normal: (props: any) => (
+                  <p className="my-2" {...props} />
                 ),
                 li: ({ children }: any) => (
                   <li className="ml-4 list-disc">{children}</li>
