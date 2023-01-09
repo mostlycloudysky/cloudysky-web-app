@@ -15,7 +15,7 @@ function blogs({posts}: Props) {
   return (
     <>
       <Layout title='CloudyS.K.Y - Blogs'>
-        <Header></Header>
+        {/* <Header></Header> */}
         
         <div className='pt-5 pl-5 pr-5'>
           <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
@@ -29,6 +29,7 @@ function blogs({posts}: Props) {
               aria-label="Search "
               value=''
               // onChange={(e) => setsearch(e.target.value)}
+              defaultValue="test"
               type="text"
               placeholder="Search articles"
               className="block w-full px-4 py-2 border rounded-md border-hightlight-med bg-surface focus:ring-rose focus:border-rose"
