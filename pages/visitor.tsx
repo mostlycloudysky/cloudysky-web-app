@@ -10,7 +10,7 @@ function visitor() {
   return (
     <>
     <Layout title='CloudyS.K.Y - Visitors Log'>
-      <Header></Header>
+      {/* <Header></Header> */}
         <div className='pt-5 pl-5 pr-5'>
           <VisitorLogs />
         </div>

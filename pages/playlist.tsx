@@ -5,7 +5,7 @@ import Header from '../components/Header';
 function playlist() {
   return (
     <Layout title='CloudyS.K.Y - Playlist'>
-      <Header />
+      {/* <Header /> */}
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}
         <div className='flex'>
