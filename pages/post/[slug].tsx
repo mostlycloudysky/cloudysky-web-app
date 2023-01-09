@@ -3,20 +3,30 @@ import Header from '../../components/Header'
 import Layout from '../../components/Layout'
 import { sanityClient } from '../../sanity'
 import { GetStaticProps } from 'next'
-import { Post } from '../../typings'
+import { DetailedPost } from '../../typings'
 import { urlFor} from '../../sanity'
 import { EyeIcon } from '@heroicons/react/solid'
 import PortableText from 'react-portable-text'
 import CodeBlock from '../../components/CodeBlock'
+import { LinkedinShareButton, 
+         TwitterShareButton, 
+         EmailShareButton, 
+         PinterestShareButton, 
+         LinkedinIcon,
+         RedditShareButton,
+         RedditIcon, 
+         TwitterIcon} from 'react-share'
+import Footer from '../../components/Footer'
 
 
 interface Props {
-  post: Post;
+  post: DetailedPost;
 }
 
 function Post({post}: Props) {
-  
-  
+
+  console.log(post)
+
   return (
     <Layout>
         <Header />
@@ -44,7 +54,7 @@ function Post({post}: Props) {
           <div className='border-b-[1px] border-green-600 border-muted'></div>
           <div>
             <PortableText
-              className='mt-5'
+              className='mt-5 mb-5'
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
@@ -77,6 +87,63 @@ function Post({post}: Props) {
               }}
             />
           </div>
+          <div className=' flex items-center justify-between mb-5'>
+            {/* Tags  */}
+            <div className=' flex items-center space-x-2'>
+              {post.categories.map((catagory) => (
+                <span
+                    className="inline-flex items-center leading-none px-2.5 py-1.5 text-sm font-medium text-skin-inverted rounded-full border border-skin-input"
+                      >
+                      {catagory.title}
+                  </span>
+              ))}
+ 
+            </div>
+            {/* Social share buttons */}
+            <div className='flex items-center space-x-2'>
+              <LinkedinShareButton
+                url={post.slug.current}
+                title={post.title}
+                summary={post.description}
+                windowWidth={750}
+                windowHeight={600}
+                className='cursor-pointer hover:opacity-75'
+                >
+                <LinkedinIcon
+                    size={32}
+                    round />
+              </LinkedinShareButton>
+
+              <TwitterShareButton
+                url={post.slug.current}
+                title={post.title}
+                className='cursor-pointer hover:opacity-75'
+
+              >
+              <TwitterIcon
+                  size={32}
+                  round />
+              </TwitterShareButton>
+              <RedditShareButton
+                url={post.slug.current}
+                title={post.title}
+                windowWidth={660}
+                windowHeight={460}
+                className='cursor-pointer hover:opacity-75'
+
+                >
+              <RedditIcon
+                  size={32}
+                  round />
+              </RedditShareButton>
+
+            </div>
+
+          </div>
+          <div className='border-b-[1px] border-green-600 border-muted mt-2 mb-2'></div>
+          <div className='pr-5 mb-5'>
+            <Footer />
+          </div>
 
  
         </div>
@@ -101,7 +168,7 @@ export const getStaticPaths = async () => {
       slug: post.slug.current,
     },
   }));
-
+  
   return {
     paths,
     fallback: "blocking",
@@ -116,6 +183,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         author-> {
           name,
           image
+        },
+        categories[] -> {
+          title,
+          slug
         },
         description,
         mainImage,
