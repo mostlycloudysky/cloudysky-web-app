@@ -35,7 +35,7 @@ function VisitorLogs() {
 
   return (
     <>  
-      <div className="border border-hightlight-high rounded p-6 my-4 max-w-xl mx-auto mb-5">
+      <div className="border border-hightlight-high rounded p-6 my-4 mb-5">
         <p className="text-lg md:text-xl font-bold">
           Signin to the Visitor Logs
         </p>
