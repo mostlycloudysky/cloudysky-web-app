@@ -21,7 +21,7 @@ export default function Home({ posts }: Props) {
 
   return (
     <Layout title='CloudyS.K.Y - Home'>
-      <Header />
+      {/* <Header /> */}
       {/* Header and profile bio */}
       <Profile />
       {/* Featured posts */}
