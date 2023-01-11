@@ -2,8 +2,15 @@ import React from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import SnippetsCard from '../components/SnippetsCard';
+import { sanityClient, urlFor } from '../sanity';
+import {Snippets } from '../typings'
 
-function snippets() {
+
+interface Props {
+  snippets: [Snippets]
+}
+
+function snippets({ snippets}: Props) {
   return (
     <Layout title='CloudyS.K.Y - Snippets'>
       {/* <Header></Header> */}
@@ -42,19 +49,39 @@ function snippets() {
               ></path>
             </svg>
           </div>
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
-          <SnippetsCard />
+          {/* Snippets card */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6'>
+            {snippets.map((snippet) => (
+              <SnippetsCard snippet={snippet} key={snippet._id} />
+            ))}
+          </div>
         </div>
-
-
     </Layout>
   )
 }
 
 export default snippets
+
+export const getServerSideProps = async() => {
+
+  const snippetsQuery = `*[_type == 'snippets']{
+    _id,
+    _createdAt,  
+    title,
+    description,  
+    body,
+    Featured,  
+    mainImage,
+    slug, 
+  }`
+  
+  const snippets = await sanityClient.fetch(snippetsQuery);
+
+  return {
+    props: {
+      snippets
+    }
+  }
+};
+
+
