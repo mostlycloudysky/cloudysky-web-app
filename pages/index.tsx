@@ -38,7 +38,7 @@ export default function Home({ posts, snippets }: Props) {
         <FeaturedPosts /> */}
         <Link
           href="/blogs"
-          className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
+          className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-green-600 transition-all h-6"
         >
           <>
             {'See all blogs'}
@@ -71,14 +71,12 @@ export default function Home({ posts, snippets }: Props) {
           {snippets.map((snippet) => (
             <SnippetsCard snippet={snippet} key={snippet._id} />
           ))}
-
-
         </div>
 
 
         <Link
           href="/snippets"
-          className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
+          className="flex items-center mt-2 mb-6 hover:text-green-600  text-gray-600 dark:text-gray-400 leading-7 rounded-lg  transition-all h-6"
         >
           <>
             {'See all snippets'}
