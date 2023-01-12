@@ -15,7 +15,7 @@ export default function CodeBlock({ code, language }: Props) {
     <SyntaxHighlighter
       language={language}
       style={vs2015}
-      showLineNumbers={language !== 'sh'}
+      // showLineNumbers={language !== 'sh'}
       customStyle={{
         marginTop: 0,
         borderTopLeftRadius: 0,
