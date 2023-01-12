@@ -23,6 +23,7 @@ export default function CodeBlock({ code, language }: Props) {
       }}
       wrapLines
       wrapLongLines
+      
     >
       {code}
     </SyntaxHighlighter>
