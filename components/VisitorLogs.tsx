@@ -123,7 +123,7 @@ function VisitorLogs() {
           { subscriberCount } subscribers - {issues && issues.length} {issues && issues.length > 1 ? 'issues' : 'issue'}
         </p> */}
       </div>
-      <div className="max-w-xl mx-auto mb-5">
+      <div className="mb-5">
             <ul role="list" className="divide-y divide-gray-200">
       {messages.map((message) => (
         <li
