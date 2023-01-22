@@ -23,7 +23,7 @@ function Snippet({snippet}: Props) {
           <div className=' mb-2'>
             <img 
              src={urlFor(snippet.mainImage).url()!}
-             className='w-12 h-12 rounded-full dark:bg-white'
+             className='w-12 h-12 rounded-full'
             /> 
           </div>
           <div className='flex items-center justify-between'>
@@ -31,7 +31,7 @@ function Snippet({snippet}: Props) {
             <div className='ml-1'>
               <h4 className='w-full mb-1 text-xl font-medium text-gray-900 md:text-xl dark:text-gray-100'>{snippet.title}</h4>
               <div className=' flex items-center'>
-                <p className=' text-sm font-normal text-skin-base leading-5 pb-1'><span className=''>{new Date(snippet._createdAt).toLocaleDateString() }</span>, Published in Medium, DevTo and HashNode</p> 
+                <p className=' text-sm  text-skin-base leading-5 pb-1'><span className=''>{new Date(snippet._createdAt).toLocaleDateString() }</span>, Published in Medium, DevTo and HashNode</p> 
               </div>
             </div>
             <div className='flex items-center space-x-2'>
@@ -74,7 +74,7 @@ function Snippet({snippet}: Props) {
             </div>
           </div>
 
-          <p className="ml-1 mt-3 mb-3 text-md font-normal text-skin-base text-gray-800 dark:text-gray-100 ">
+          <p className="ml-1 mt-3 mb-3 text-md italic text-skin-base text-gray-800 dark:text-gray-100 ">
             {snippet.description}
           </p>
           {/* <div className='border-b-[1px] border-green-600 border-muted'></div> */}
