@@ -73,7 +73,7 @@ function Header() {
           <NavItem href='/' text='Home' />
           <NavItem href='/blogs' text='Blogs' />
           <NavItem href='/snippets' text='Snippets' />
-          <NavItem href='/visitor' text='Visitors Log' />   
+          {/* <NavItem href='/visitor' text='Visitors Log' />    */}
         </div>
           <div className='flex items-center space-x-4'>
             <SpotifyPlaying text='Playlist' />
