@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
+import Toptracks from '../components/Toptracks';
 
 function playlist() {
   return (
@@ -9,7 +10,7 @@ function playlist() {
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}
         <div className='flex'>
-          <img className="mr-6" src="https://placekitten.com/g/200/200"></img>
+          <img className="mr-6" src="https://placekitten.com/g/250/230"></img>
           <div className=' flex flex-col justify-center'>
             <h4 className="mt-0 mb-2 uppercase text-gray-500 tracking-widest text-xs">Playlist</h4>
             <h2 className="font-bold text-4xl md:text-4xl tracking-tight mb-1 text-black dark:text-white">
@@ -20,6 +21,7 @@ function playlist() {
             <button className=" mt-5 mr-5 border px-3 rounded-full py-1 font-normal text-base cursor-pointer pt-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white">Play</button>
           </div>
         </div>
+        <Toptracks />
           <div className="mt-10">
     <div className="flex text-gray-600">
       <div className="p-2 w-8 flex-shrink-0"></div>
