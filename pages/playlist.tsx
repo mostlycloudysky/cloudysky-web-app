@@ -3,7 +3,10 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Toptracks from '../components/Toptracks';
 
-function playlist() {
+
+export default function playlist({playListData}) {
+  const {data} = playListData
+  console.log(data)
   return (
     <Layout title='CloudyS.K.Y - Playlist'>
       {/* <Header /> */}
@@ -14,14 +17,12 @@ function playlist() {
           <div className=' flex flex-col justify-center'>
             <h4 className="mt-0 mb-2 uppercase text-gray-500 tracking-widest text-xs">Playlist</h4>
             <h2 className="font-bold text-4xl md:text-4xl tracking-tight mb-1 text-black dark:text-white">
-              <span className=' bg-green-100 dark:bg-green-600'>Sandeep Playlist</span> 
+              <span className=''>{data.name}</span> 
             </h2>
-            <p className="text-gray-600 mb-2 text-sm">With J. Cole, Quavo, Ty Dollar $ign</p>
-            <p className="text-gray-600 text-sm">Created by <a>Sandeep</a> - 50 songs, 3 hr 2 min</p>
+            <p className="text-gray-600 text-sm">Created by <a>{data.owner["display_name"]}</a> - {data.tracks['total']}, 3 hr 2 min</p>
             <button className=" mt-5 mr-5 border px-3 rounded-full py-1 font-normal text-base cursor-pointer pt-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white">Play</button>
           </div>
         </div>
-        <Toptracks />
           <div className="mt-10">
     <div className="flex text-gray-600">
       <div className="p-2 w-8 flex-shrink-0"></div>
@@ -79,4 +80,14 @@ function playlist() {
   )
 }
 
-export default playlist
+
+export const getServerSideProps = async() => {
+
+  const response = await fetch(`http://localhost:3000/api/my-playlist`)
+  const playListData = await response.json()
+  return {
+    props: {
+      playListData
+    }
+  }
+}
