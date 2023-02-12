@@ -24,7 +24,7 @@ function Layout({title, keywords, description, children}: Props) {
               <link rel="icon" href="/favicon.ico" />
           </Head>
           <Header />
-                <AnimatePresence initial={true} exitBeforeEnter>
+                <AnimatePresence initial={true} mode='wait'>
                     <motion.div
                     key={router.asPath}
                     initial={{

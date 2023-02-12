@@ -5,9 +5,19 @@ function Toptracks() {
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(false)
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   setLoading(true)
+  //   fetch('/api/top-tracks')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data)
+  //       setLoading(false)
+  //     })
+  // }, [])
+
+    useEffect(() => {
     setLoading(true)
-    fetch('/api/top-tracks')
+    fetch('/api/my-playlist')
       .then((res) => res.json())
       .then((data) => {
         setData(data)
@@ -18,7 +28,10 @@ function Toptracks() {
   if (isLoading) return <p>Loading...</p>
   if (!data) return <p>No Data to load</p>
 
-  console.log(data.tracks)
+  const playListData = data.data
+  console.log(playListData.name)
+  console.log(playListData.owner.display_name)
+
   return (
     <div>
       <h1>test</h1>
