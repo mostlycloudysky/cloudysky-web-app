@@ -3,7 +3,7 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['iad.microlink.io'],
+    domains: ['iad.microlink.io', 'i.scdn.co'],
   },
   typescript: {
     // !! WARN !!

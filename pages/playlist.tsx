@@ -2,18 +2,25 @@ import React from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Toptracks from '../components/Toptracks';
+import Image from 'next/image'
 
 
 export default function playlist({playListData}) {
   const {data} = playListData
-  console.log(data)
+  console.log(data.images[0]['url'])
   return (
     <Layout title='CloudyS.K.Y - Playlist'>
       {/* <Header /> */}
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}
         <div className='flex'>
-          <img className="mr-6" src="https://placekitten.com/g/250/230"></img>
+          <Image
+          alt=''
+          src={data.images[0]['url']}
+          width={220}
+          height={200}
+        />
+          {/* <img className="mr-6 w-200 h-200" src={data.images[0]['url']}></img> */}
           <div className=' flex flex-col justify-center'>
             <h4 className="mt-0 mb-2 uppercase text-gray-500 tracking-widest text-xs">Playlist</h4>
             <h2 className="font-bold text-4xl md:text-4xl tracking-tight mb-1 text-black dark:text-white">
