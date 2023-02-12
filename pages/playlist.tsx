@@ -5,6 +5,7 @@ import Toptracks from '../components/Toptracks';
 import Image from 'next/image'
 import Link from 'next/link'
 import PlayListHeader from '../components/PlayListHeader';
+import Songs from '../components/Songs';
 
 
 export default function playlist({playListData}) {
@@ -15,7 +16,8 @@ export default function playlist({playListData}) {
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}
         <PlayListHeader data={data} />
-          <div className="mt-10">
+        <Songs />
+          {/* <div className="mt-10">
             <div className="flex text-gray-600">
               <div className="p-2 w-8 flex-shrink-0"></div>
               <div className="p-2 w-8 flex-shrink-0"></div>
@@ -65,7 +67,7 @@ export default function playlist({playListData}) {
       <div className="p-3 w-full">Spotify</div>
       <div className="p-3 w-12 flex-shrink-0 text-right">5:35</div>
     </div>
-  </div>
+          </div> */}
 
       </div>
     </Layout>
