@@ -16,7 +16,7 @@ export default function playlist({playListData}) {
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}
         <PlayListHeader data={data} />
-        <Songs />
+        <Songs songs={data} />
           {/* <div className="mt-10">
             <div className="flex text-gray-600">
               <div className="p-2 w-8 flex-shrink-0"></div>
