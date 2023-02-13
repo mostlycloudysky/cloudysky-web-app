@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PlayListHeader from '../components/PlayListHeader';
 import Songs from '../components/Songs';
+import Footer from '../components/Footer';
 
 
 export default function playlist({playListData}) {
@@ -17,6 +18,7 @@ export default function playlist({playListData}) {
         {/* Playlist Header component */}
         <PlayListHeader data={data} />
         <Songs songs={data} />
+        <Footer />
           {/* <div className="mt-10">
             <div className="flex text-gray-600">
               <div className="p-2 w-8 flex-shrink-0"></div>
