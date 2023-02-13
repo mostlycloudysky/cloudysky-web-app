@@ -11,7 +11,8 @@ function Songs({songs}) {
             <th className='pb-3'>TITLE</th>
             <th className='pb-3'>ALBUM</th>
             <th className='pb-3'>
-              <div className="p-2 w-12 flex-shrink-0 text-right">⏱</div>
+              <div className="pr-5 w-18 h-18">⏱</div>
+              {/* <img alt='' className='' src='/time.svg' /> */}
             </th>
           </tr>
         </tbody>
