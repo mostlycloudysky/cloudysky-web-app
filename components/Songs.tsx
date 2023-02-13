@@ -1,6 +1,7 @@
 import React from 'react'
+import TableRow from './TableRow'
 
-function Songs() {
+function Songs({songs}) {
   return (
     <div>
       <table className='w-full text-left mt-5'>
@@ -9,7 +10,6 @@ function Songs() {
             <th className='pb-3'>#</th>
             <th className='pb-3'>TITLE</th>
             <th className='pb-3'>ALBUM</th>
-            <th className='pb-3'>DATE ADDED</th>
             <th className='pb-3'>
               <div className="p-2 w-12 flex-shrink-0 text-right">⏱</div>
             </th>
@@ -17,7 +17,9 @@ function Songs() {
         </tbody>
         <tbody className='mb-6 block'></tbody>
         {/* Add Table rows here */}
-        
+        {songs.tracks['items'].map((song, i) => {
+            return <TableRow key={song.id} song={song} order={i} />
+        })}
       </table>
     </div>
   )
