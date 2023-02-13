@@ -2,6 +2,7 @@ import React from 'react'
 import { millisToMinutesAndSeconds } from "../lib/time";
 
 function TableRow({song, order}) {
+  console.log(song)
   return (
     <tbody className=' text-gray-600 dark:text-gray-500 rounded hover:bg-gray-100 hover:dark:bg-gray-600 cursor-pointer text-sm md:text-base'>
       <tr >
