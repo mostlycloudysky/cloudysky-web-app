@@ -10,8 +10,6 @@ import Footer from '../components/Footer';
 
 
 export default function playlist({playListData}) {
-
-  console.log('Playlist data', playListData)
   const {data} = playListData
   return (
     <Layout title='CloudyS.K.Y - Playlist'>
@@ -29,12 +27,10 @@ export default function playlist({playListData}) {
 
 export const getServerSideProps = async() => {
 
-  console.log('Playlist Page data')
 
   const url = process.env.NODE_ENV === 'production' ? 'https://cloudysky.link/api/my-playlist' : 'http://localhost:3000/api/my-playlist'
 
   const response = await fetch(url)
-  console.log(response)
   const playListData = await response.json()
 
   return {
