@@ -27,7 +27,10 @@ export default function playlist({playListData}) {
 
 export const getServerSideProps = async() => {
 
-  const response = await fetch(`http://localhost:3000/api/my-playlist`)
+
+  const url = process.env.NODE_ENV === 'production' ? 'https://cloudysky.link/api/my-playlist' : 'http://localhost:3000/api/my-playlist'
+
+  const response = await fetch(url)
   const playListData = await response.json()
 
   return {
