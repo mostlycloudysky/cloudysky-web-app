@@ -43,17 +43,17 @@ export default function playlist() {
 }
 
 
-export const getServerSideProps = async() => {
+// export const getServerSideProps = async() => {
 
 
-  const url = process.env.NODE_ENV === 'production' ? 'https://cloudysky.link/api/my-playlist' : 'http://localhost:3000/api/my-playlist'
+//   const url = process.env.NODE_ENV === 'production' ? 'https://cloudysky.link/api/my-playlist' : 'http://localhost:3000/api/my-playlist'
 
-  const response = await fetch(url)
-  const playListData = await response.json()
+//   const response = await fetch(url)
+//   const playListData = await response.json()
 
-  return {
-    props: {
-      playListData
-    }
-  }
-}
+//   return {
+//     props: {
+//       playListData
+//     }
+//   }
+// }
