@@ -29,6 +29,7 @@ export default function playlist() {
   if (!playListdata) return <p>No profile data</p>
 
   const {data} = playListdata
+  console.log(data)
   return (
     <Layout title='CloudyS.K.Y - Playlist'>
       {/* <Header /> */}
