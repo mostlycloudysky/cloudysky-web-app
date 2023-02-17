@@ -1,4 +1,5 @@
 import {getTopTracks} from '../../lib/spotify'
+import enablePublicAccess from '../../cors-middleware'
 
 export default async function handler(req, res) {
     const response = await getTopTracks();
