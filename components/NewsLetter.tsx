@@ -3,7 +3,7 @@ import React from 'react'
 function NewsLetter() {
   return (
     <>  
-      <div className="border border-hightlight-high rounded p-6 my-4 w-full mb-5 bg-sky-100 dark:bg-sky-900">
+      <div className="border border-hightlight-high rounded p-6 my-4 w-full mb-5">
         <p className="text-lg md:text-xl font-bold">
           Subscribe to My Newsletter
         </p>
@@ -17,10 +17,10 @@ function NewsLetter() {
             type="email"
             autoComplete="email"
             required
-            className="px-4 py-2 mt-1 outline-none block w-full bg-base border-foam rounded-md pr-32"
+            className="px-4 py-2 mt-1 outline-none block w-full bg-base border rounded-md pr-32"
           />
           <button
-            className="flex items-center justify-center absolute right-1 top-1 px-4 pt-1 font-medium h-8 bg-pine dark:text-white rounded w-28"
+            className="flex items-center justify-center absolute right-1 top-1 px-4 pt-1  h-8 bg-green-600 text-white   dark:text-white rounded w-28"
             type="submit"
           >
             Subscribe
