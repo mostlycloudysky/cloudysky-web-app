@@ -1,10 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Toptracks from '../components/Toptracks';
 import { useState, useEffect} from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import PlayListHeader from '../components/PlayListHeader';
 import Songs from '../components/Songs';
 import Footer from '../components/Footer';
