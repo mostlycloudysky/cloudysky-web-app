@@ -32,7 +32,7 @@ function blogs({posts}: Props) {
               defaultValue="test"
               type="text"
               placeholder="Search articles"
-              className="block w-full px-4 py-2 border rounded-md border-hightlight-med bg-surface focus:ring-rose focus:border-rose"
+              className="block w-full px-4 py-2 border rounded-md border-hightlight-med  focus:border-green-600"
             />
             <svg
               className="absolute w-5 h-5 right-3 top-3 text-subtle"

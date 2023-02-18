@@ -68,7 +68,7 @@ function Header() {
   // Dark mode toggle code ends here
   return (
     <>
-     <header className='flex items-center justify-between pl-5 pt-5 pb-2 pr-5'>
+     <header className='flex items-center justify-between pl-5 pt-5  pr-5'>
         <div className='flex items-center space-x-5 flex-shrink-0 py-5'>
           <NavItem href='/' text='Home' />
           <NavItem href='/blogs' text='Blogs' />

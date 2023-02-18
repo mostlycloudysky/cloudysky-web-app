@@ -15,15 +15,15 @@ function TableRow({song, order}) {
             alt=""
           />
           <div>
-            <p className="text-md text-gray-900 dark:text-gray-600 truncate">{song.track.name}</p>
+            <p className="text-md text-gray-600 dark:text-gray-400 truncate">{song.track.name}</p>
             <p className="text-gray-500 text-sm">{song.track.artists[0].name}</p>
           </div>
         </div>
         </th>
-        <th className='pb-3 text-sm cursor-pointer'>{song.track.album.name}</th>
+        <th className='pb-3 text-sm cursor-pointer text-gray-600 dark:text-gray-400'>{song.track.album.name}</th>
         {/* <th className={styles.th}>{props.plays}</th> */}
       
-        <th className='pb-3 cursor-pointer text-sm text-gray-500'>{millisToMinutesAndSeconds(song.track.duration_ms)}</th>
+        <th className='pb-3 cursor-pointer text-sm text-gray-600 dark:text-gray-400'>{millisToMinutesAndSeconds(song.track.duration_ms)}</th>
       </tr>
     </tbody>
   )
