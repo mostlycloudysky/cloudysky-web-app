@@ -21,8 +21,6 @@ interface Props {
 
 export default function Home({ posts, snippets }: Props) {
 
-  console.log(snippets)
-
   return (
     <Layout title='CloudyS.K.Y - Home'>
       <Profile />
