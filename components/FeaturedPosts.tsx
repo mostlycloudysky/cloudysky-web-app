@@ -10,11 +10,11 @@ interface Props {
 function FeaturedPosts({post}: Props) {
 
   return (
-          <div className='border bg-surface rounded border-gray-200 p-3 mb-3 overflow-hidden'>
+          <div className=' cursor-pointer p-3 mb-2 border border-grey-200 dark:border-gray-800 rounded p-4 w-full bg-gray-50 dark:bg-gray-900 hover:scale-101 transition-transform duration-200 ease-in-out'>
             {/* Blog Content */}
             <div className=''>
               <Link key={post._id} href={`post/${post.slug.current}`}>
-                <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline decoration-green-600 '>{post.title}</p>        
+                <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight '>{post.title}</p>        
               </Link>
               {/* <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline decoration-green-600'>{post.title}</p> */}
               <p className=' text-xs font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>{new Date(post._createdAt).toLocaleString()}</span> .Published in Medium, DevTo and HashNode</p> 
