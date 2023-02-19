@@ -9,7 +9,7 @@ import NewsLetter from '../components/NewsLetter';
 function visitor() {
   return (
     <>
-    <Layout title='CloudyS.K.Y - Visitors Log'>
+    <Layout title='Visitors Log'>
       {/* <Header></Header> */}
         <div className='pt-5 pl-5 pr-5'>
           <VisitorLogs />

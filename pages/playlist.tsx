@@ -15,7 +15,7 @@ export default function playlist({playListData}) {
   console.log(playListData)
   const {data} = playListData
   return (
-    <Layout title='CloudyS.K.Y - Playlist'>
+    <Layout title='Playlist'>
       {/* <Header /> */}
       <div className='pt-5 pl-5 pr-5'>
         {/* Playlist Header component */}

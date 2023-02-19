@@ -14,7 +14,7 @@ interface Props {
 function blogs({posts}: Props) {
   return (
     <>
-      <Layout title='CloudyS.K.Y - Blogs'>
+      <Layout title='Blogs'>
         {/* <Header></Header> */}
         
         <div className='pt-5 pl-5 pr-5'>

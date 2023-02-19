@@ -12,7 +12,7 @@ interface Props {
 
 function snippets({ snippets}: Props) {
   return (
-    <Layout title='CloudyS.K.Y - Snippets'>
+    <Layout title='Snippets'>
       {/* <Header></Header> */}
         <div className='pt-5 pl-5 pr-5'>
           <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
