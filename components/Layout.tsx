@@ -21,7 +21,7 @@ function Layout({title, keywords, description, children}: Props) {
               <title>{title}</title>
               <meta name="keyword" content={keywords} />
               <meta name="description" content={description} />
-              <link rel="icon" href="/favicon.ico" />
+              <link rel="icon" href="/html.png" />
           </Head>
           <Header />
                 <AnimatePresence initial={true} mode='wait'>

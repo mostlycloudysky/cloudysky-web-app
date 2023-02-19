@@ -22,7 +22,7 @@ interface Props {
 export default function Home({ posts, snippets }: Props) {
 
   return (
-    <Layout title='CloudyS.K.Y - Home'>
+    <Layout title='Home'>
       <Profile />
       {/* Featured posts */}
       <div className='pt-5 pl-5 pr-5'>
