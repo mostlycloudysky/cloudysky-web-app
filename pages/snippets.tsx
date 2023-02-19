@@ -32,7 +32,7 @@ function snippets({ snippets}: Props) {
               defaultValue='text'
               type="text"
               placeholder="Search Code Snippets"
-              className="block w-full px-4 py-2 border rounded-md border-hightlight-med bg-surface focus:ring-rose focus:border-rose"
+              className="block w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-1  focus:border-green-500 focus:ring-green-500"
             />
             <svg
               className="absolute w-5 h-5 right-3 top-3 text-subtle"
