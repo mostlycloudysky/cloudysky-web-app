@@ -21,6 +21,7 @@ export default function playlist({playListData}) {
         {/* Playlist Header component */}
         <PlayListHeader data={data} />
         <Songs songs={data} />
+        <div className='border-b-[1px] border-muted'></div>
         <Footer />
       </div>
     </Layout>

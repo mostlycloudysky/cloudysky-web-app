@@ -13,7 +13,7 @@ function TableRow({song, order}) {
    }
   return (
 
-      <tbody onClick={() => openInNewTab(url)}  className=' text-gray-600 p-3 dark:text-gray-500 rounded hover:bg-gray-100 hover:dark:bg-gray-800 cursor-pointer'>
+      <tbody onClick={() => openInNewTab(url)}  className=' text-gray-600 p-3 dark:text-gray-800 rounded hover:bg-gray-100 hover:dark:bg-gray-900 cursor-pointer'>
         <tr className='text-sm sm:pl-0' >
           <th className='pb-5 cursor-pointer'>{ order + 1}</th>
           <th className='pb-5  cursor-pointer'>
