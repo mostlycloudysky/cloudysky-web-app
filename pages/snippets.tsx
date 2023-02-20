@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import SnippetsCard from '../components/SnippetsCard';
 import { sanityClient, urlFor } from '../sanity';
 import {Snippets } from '../typings'
+import Footer from '../components/Footer';
 
 
 interface Props {
@@ -55,6 +56,8 @@ function snippets({ snippets}: Props) {
               <SnippetsCard snippet={snippet} key={snippet._id} />
             ))}
           </div>
+          <div className='mt-5 border-b-[1px] border-muted'></div>
+          <Footer />
         </div>
     </Layout>
   )
