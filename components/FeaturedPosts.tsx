@@ -20,8 +20,7 @@ function FeaturedPosts({ post }: Props) {
           </h3>
           {/* <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline decoration-green-600'>{post.title}</p> */}
           <p className=' text-xs  leading-5 pt-1 pb-1'><span className=''>{new Date(post._createdAt).toLocaleString()}</span> .Published in Medium, DevTo and HashNode</p>
-          <p className="mt-3 mb-4 text-sm md:text-md">
-
+          <p className="mt-3 mb-4 text-sm text-skin-base">
             {post.description}
           </p>
           <div className='mt-2 flex items-center justify-between'>
