@@ -6,9 +6,7 @@ export interface Post {
       name: string;
       image: string;
     };
-    categories: {
-      title: string;
-    };
+    categories: Category[];
     // comments: Comment[];
     description: string;
     mainImage: {
