@@ -31,8 +31,8 @@ function BlogPosts({post}: Props) {
                       {catagory.title}
                   </span>
               ))}
-              <span className="h-4 w-4 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+              <span className="h-4 w-4 bg-gray-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                <span className="h-2 w-2 bg-gray-500 rounded-full"></span>
               </span>              
               <p className=' text-sm font-normal text-skin-base leading-5'>2 mins read</p>  
             </div>
