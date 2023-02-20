@@ -13,7 +13,6 @@ import { sanityClient, urlFor } from '../sanity'
 
 import { Post, Snippets } from '../typings.d'
 import snippets from './snippets';
-import BlogCards from '../components/blogcards'
 
 interface Props {
   posts: [Post],
@@ -25,18 +24,14 @@ export default function Home({ posts, snippets }: Props) {
   return (
     <Layout title='Home'>
       <Profile />
-    
-      {/* <BlogCards /> */}
-      {/* Featured posts */}
       <div className='pt-5 pl-5 pr-5'>
-        <h3 className=" font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
+        <h3 className=" font-bold text-2xl md:text-3xl tracking-tight mb-4 text-black dark:text-white">
           Featured Blogs
         </h3>
+
         {posts.map((post) => (
           <FeaturedPosts post={post} key={post._id} />
         ))}
-        {/* <FeaturedPosts />
-        <FeaturedPosts /> */}
         <Link
           href="/blogs"
           className="flex items-center mb-6  text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-green-600 transition-all h-6"
@@ -59,7 +54,7 @@ export default function Home({ posts, snippets }: Props) {
             </svg>
           </>
         </Link>
-        <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
+        <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-4 text-black dark:text-white">
           Snippets
         </h3>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
@@ -113,8 +108,9 @@ export const getServerSideProps = async () => {
     _id,
     title,
     _createdAt,
-    categories[0] -> {
-      title
+    categories[] -> {
+      title,
+      slug
     },
     author -> {
       name,
