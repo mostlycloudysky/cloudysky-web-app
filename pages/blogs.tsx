@@ -70,8 +70,9 @@ export const getServerSideProps = async () => {
     _id,
     title,
     _createdAt,
-    categories[0] -> {
-      title
+    categories[] -> {
+      title,
+      slug
     },
     author -> {
       name,

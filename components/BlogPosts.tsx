@@ -24,12 +24,16 @@ function BlogPosts({post}: Props) {
           {/* Tags */}
           <div className='mt-2 flex items-center justify-between'>
             <div className='flex items-center space-x-2'>
-              <span
-                className="inline-flex items-center leading-none px-2.5 py-1.5 text-sm font-medium text-skin-inverted rounded-full border border-skin-input"
-                >
-                  {post.categories?.title}
-
-              </span>
+              {post.categories.map((catagory) => (
+                <span
+                    className="inline-flex items-center leading-none px-2.5 py-1.5 text-sm rounded-full border border-gray-600"
+                      >
+                      {catagory.title}
+                  </span>
+              ))}
+              <span className="h-4 w-4 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+              </span>              
               <p className=' text-sm font-normal text-skin-base leading-5'>2 mins read</p>  
             </div>
             <div className='flex items-center space-x-1 mr-5 pr-5'>
