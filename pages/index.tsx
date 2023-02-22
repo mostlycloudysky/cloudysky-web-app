@@ -92,7 +92,8 @@ export default function Home({ posts, snippets }: Props) {
             </svg>
           </>
         </Link>
-        <NewsLetter />
+        {/* <NewsLetter /> */}
+        <div className='border-b-[1px] border-muted'></div>
         <Footer />
 
       </div>
