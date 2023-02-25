@@ -45,7 +45,7 @@ function Header() {
               <div className='flex cursor-pointer items-center'>
                   <h2 className='text-md font-mono font-semibold uppercase tracking-tighter dark:text-gray-50'>
                     <SunIcon
-                        className='ml-1 inline-block h-8 w-8 text-amber-400 animate-wiggle'
+                        className='ml-1 inline-block h-8 w-8 text-gray-400 '
                         onClick={() => setTheme('light')}
                     />
                   </h2>

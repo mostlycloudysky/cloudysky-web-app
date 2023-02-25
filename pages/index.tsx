@@ -102,8 +102,6 @@ export default function Home({ posts, snippets }: Props) {
   )
 }
 
-
-
 export const getServerSideProps = async () => {
   const query = `*[_type == 'post' && Featured == true]{
     _id,
