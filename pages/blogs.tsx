@@ -47,7 +47,6 @@ function blogs({posts}: Props) {
         </div>
         {posts.map((post) => (
           <BlogPosts post={post} key={post._id} />
-
         ))}
         {/* <BlogPosts /> */}
         <div className='pl-5 pr-5'>
