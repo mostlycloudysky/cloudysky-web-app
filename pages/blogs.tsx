@@ -15,8 +15,6 @@ function blogs({posts}: Props) {
   return (
     <>
       <Layout title='Blogs'>
-        {/* <Header></Header> */}
-        
         <div className='pt-5 pl-5 pr-5'>
           <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
             Blogs
@@ -26,10 +24,7 @@ function blogs({posts}: Props) {
           </p>
             <div className="relative w-full">
             <input
-              aria-label="Search "
-              value=''
-              // onChange={(e) => setsearch(e.target.value)}
-              defaultValue="test"
+              aria-label="Search articles"
               type="text"
               placeholder="Search articles"
               className="block w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-1  focus:border-green-500 focus:ring-green-500"
@@ -52,7 +47,6 @@ function blogs({posts}: Props) {
         </div>
         {posts.map((post) => (
           <BlogPosts post={post} key={post._id} />
-
         ))}
         {/* <BlogPosts /> */}
         <div className='pl-5 pr-5'>
