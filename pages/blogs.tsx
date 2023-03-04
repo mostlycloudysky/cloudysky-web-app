@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import BlogPosts from '../components/BlogPosts';
@@ -6,12 +6,24 @@ import Footer from '../components/Footer';
 import {sanityClient, urlFor} from '../sanity'
 
 import {Post} from '../typings.d'
+import useSWR from 'swr'
 
 interface Props {
   posts: [Post]
 }
 
 function blogs({posts}: Props) {
+  const [query, setQuery] = useState('');
+  const response = useSWR(`/api/opensearch-results?q=${query}`);
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+    setQuery(event.target.value);
+  }
+
+  console.log("response data", response.data)
+
+
   return (
     <>
       <Layout title='Blogs'>
@@ -26,7 +38,9 @@ function blogs({posts}: Props) {
             <input
               aria-label="Search articles"
               type="text"
+              value={query}
               placeholder="Search articles"
+              onChange={handleChange}
               className="block w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-1  focus:border-green-500 focus:ring-green-500"
             />
             <svg
