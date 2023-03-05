@@ -10,6 +10,8 @@ export default async function handler(req, res) {
         songUrl: track.external_urls.spotify,
         title: track.name,
     }));
+
+    res.setHeader('Cache-Control', 'max-age=3600, s-maxage=86400');
  
     return res.status(200).json({ tracks });
 }

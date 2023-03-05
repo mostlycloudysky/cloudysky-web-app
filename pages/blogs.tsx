@@ -1,17 +1,47 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import BlogPosts from '../components/BlogPosts';
 import Footer from '../components/Footer';
 import {sanityClient, urlFor} from '../sanity'
-
 import {Post} from '../typings.d'
+
 
 interface Props {
   posts: [Post]
 }
 
 function blogs({posts}: Props) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    let timeoutId
+    const fetchResults = async() => {
+      setIsLoading(true)
+      const res = await fetch(`/api/opensearch-results?q=${searchTerm}`)
+      const data = await res.json()
+      // Id to find from post arrary and return the post
+      const id = data.response.map((item) => item._id)
+      const filteredPosts = posts.filter((post) => id.includes(post._id))
+      setSearchResults(filteredPosts)
+      setIsLoading(false)
+    }
+    if (searchTerm !== '') {
+      timeoutId = setTimeout(fetchResults, 500) //Debounce for 500ms
+    } else {
+      setSearchResults([])
+    }
+
+    return () => {
+      clearTimeout(timeoutId) //Clear timeout on unmount
+    }
+    
+  }, [searchTerm])
+
+  console.log(searchResults)
+
   return (
     <>
       <Layout title='Blogs'>
@@ -26,7 +56,9 @@ function blogs({posts}: Props) {
             <input
               aria-label="Search articles"
               type="text"
+              value={searchTerm}
               placeholder="Search articles"
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="block w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-1  focus:border-green-500 focus:ring-green-500"
             />
             <svg
@@ -45,10 +77,10 @@ function blogs({posts}: Props) {
             </svg>
           </div>
         </div>
-        {posts.map((post) => (
+        {
+        posts.map((post) => (
           <BlogPosts post={post} key={post._id} />
         ))}
-        {/* <BlogPosts /> */}
         <div className='pl-5 pr-5'>
           <Footer />
         </div>
