@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - env | grep -e SPOTIFY_CLIENT_ID -e SPOTIFY_CLIENT_SECRET -e SPOTIFY_REFRESH_TOKEN >> .env.production
+        - env | grep -e SPOTIFY_CLIENT_ID -e SPOTIFY_CLIENT_SECRET -e SPOTIFY_REFRESH_TOKEN -e OPENSEARCH_API_KEY >> .env.production
         - env | grep -e NEXT_PUBLIC_ >> .env.production
         - npm run build
   artifacts:
