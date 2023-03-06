@@ -31,7 +31,7 @@ function blogs({posts}: Props) {
     if (searchTerm !== '') {
       timeoutId = setTimeout(fetchResults, 500) //Debounce for 500ms
     } else {
-      setSearchResults([])
+      setSearchResults(posts)
     }
 
     return () => {
@@ -78,7 +78,7 @@ function blogs({posts}: Props) {
           </div>
         </div>
         {
-        posts.map((post) => (
+        searchResults.map((post) => (
           <BlogPosts post={post} key={post._id} />
         ))}
         <div className='pl-5 pr-5'>

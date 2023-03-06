@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import SnippetsCard from '../components/SnippetsCard';
@@ -12,6 +12,10 @@ interface Props {
 }
 
 function snippets({ snippets}: Props) {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+
   return (
     <Layout title='Snippets'>
       {/* <Header></Header> */}
@@ -28,9 +32,8 @@ function snippets({ snippets}: Props) {
           <div className="relative w-full mb-5">
             <input
               aria-label="Search "
-              value=''
-              // onChange={(e) => setsearch(e.target.value)}
-              defaultValue='text'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               type="text"
               placeholder="Search Code Snippets"
               className="block w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-1  focus:border-green-500 focus:ring-green-500"

@@ -24,8 +24,9 @@ function BlogPosts({post}: Props) {
           {/* Tags */}
           <div className='mt-2 flex items-center justify-between'>
             <div className='flex items-center space-x-2'>
-              {post.categories.map((catagory) => (
+              {post.categories.map((catagory, index) => (
                 <span
+                    key={index}
                     className="inline-flex items-center leading-none px-2.5 py-1.5 text-sm rounded-full border border-gray-600"
                       >
                       {catagory.title}
