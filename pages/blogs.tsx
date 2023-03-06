@@ -27,7 +27,7 @@ function blogs({posts}: Props) {
       const filteredPosts = posts.filter((post) => id.includes(post._id))
       setSearchResults(filteredPosts)
       setIsLoading(false)
-    }
+    } 
     if (searchTerm !== '') {
       timeoutId = setTimeout(fetchResults, 500) //Debounce for 500ms
     } else {
