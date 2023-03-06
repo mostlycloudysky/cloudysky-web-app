@@ -18,9 +18,14 @@ function blogs({posts}: Props) {
 
   useEffect(() => {
     let timeoutId
+    let res 
     const fetchResults = async() => {
       setIsLoading(true)
-      const res = await fetch(`/api/opensearch-results?q=${searchTerm}`)
+      try {
+       res = await fetch(`/api/opensearch-results?q=${searchTerm}`)
+      } catch (error) {
+        throw new Error(error)
+      }
       const data = await res.json()
       // Id to find from post arrary and return the post
       const id = data.response.map((item) => item._id)
