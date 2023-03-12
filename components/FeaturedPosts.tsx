@@ -11,7 +11,6 @@ interface Props {
 
 function FeaturedPosts({ post }: Props) {
 
-
   return (
     <Link key={post._id} href={`post/${post.slug.current}`}>
 

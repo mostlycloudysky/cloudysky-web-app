@@ -12,7 +12,7 @@ function Footer() {
       </div>
       <div className='flex items-center space-x-2'>
         <span className="h-4 w-4 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
-          <span className="h-2 w-2 bg-green-600 rounded-full animate-ping"></span>
+          <span className="h-2 w-2 bg-green-800 rounded-full animate-ping"></span>
         </span>  
         <p className='pl-1 pr-1 text-sm bg-green-200 text-green-800'>ALL SYSTEMS ONLINE</p>  
 
