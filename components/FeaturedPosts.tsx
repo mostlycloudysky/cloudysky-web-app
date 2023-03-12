@@ -2,12 +2,15 @@ import React from 'react'
 import { EyeIcon } from '@heroicons/react/outline'
 import { Post } from '../typings'
 import Link from 'next/link'
+import BlockContent from '@sanity/block-content-to-react';
+import ReadingTime from './ReadingTime'
 
 interface Props {
   post: Post
 }
 
 function FeaturedPosts({ post }: Props) {
+
 
   return (
     <Link key={post._id} href={`post/${post.slug.current}`}>
@@ -36,7 +39,7 @@ function FeaturedPosts({ post }: Props) {
               <span className="h-4 w-4 bg-gray-100 rounded-full flex items-center justify-center" aria-hidden="true">
                 <span className="h-2 w-2 bg-gray-500 rounded-full"></span>
               </span>
-              <p className='text-sm'>2 mins read</p>
+              <p className='text-sm'><ReadingTime blocks={post.body} /></p>
             </div>
             <div className='flex items-center space-x-1 mr-5 pr-5'>
               <EyeIcon className='h-5 w-5 text-gray-600' />
