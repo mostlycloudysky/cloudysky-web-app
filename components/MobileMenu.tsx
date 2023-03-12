@@ -9,18 +9,23 @@ const MobileMenu = ({ isOpen, onClose }) => {
       <div className="flex flex-col justify-center items-center h-screen w-full bg-gray-900 bg-opacity-75">
         <nav className="flex flex-col justify-center items-center">
           <Link href="/" legacyBehavior>
-            <a className="text-xl font-bold text-white hover:text-gray-300 py-4">
+            <a className="text-xl font-bold text-white hover:text-green-600 py-4">
               Home
             </a>
           </Link>
-          <Link href="/about" legacyBehavior>
-            <a className="text-xl font-bold text-white hover:text-gray-300 py-4">
-              About
+          <Link href="/blogs" legacyBehavior>
+            <a className="text-xl font-bold text-white hover:text-green-600 py-4">
+              Blogs
             </a>
           </Link>
-          <Link href="/contact" legacyBehavior>
-            <a className="text-xl font-bold text-white hover:text-gray-300 py-4">
-              Contact
+          <Link href="/snippets" legacyBehavior>
+            <a className="text-xl font-bold text-white hover:text-green-600 py-4">
+              Snippets
+            </a>
+          </Link>
+          <Link href="/playlist" legacyBehavior>
+            <a className="text-xl font-bold text-white hover:text-green-600 py-4">
+              Playlist
             </a>
           </Link>
         </nav>

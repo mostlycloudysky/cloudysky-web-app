@@ -84,15 +84,15 @@ function Header() {
           <NavItem href='/snippets' text='Snippets' />
           {/* <NavItem href='/visitor' text='Visitors Log' />    */}
         </div>
-        <div className='flex items-center space-x-4'>
+        <div className='hidden  md:flex items-center space-x-4'>
             <SpotifyPlaying text='Playlist' />
           <div>{renderThemeChanger()}</div>
         </div>
         <button
-          className="md:hidden text-white focus:outline-none ml-auto text-right"
+          className="md:hidden dark:text-white focus:outline-none ml-auto text-right cursor-pointer"
           onClick={toggleMobileMenu}
         >
-          {isMobileMenuOpen ? <FiX className="h-6 w-6" /> : <FiAlignRight className="h-6 w-6" />}
+          {isMobileMenuOpen ? <FiX className="h-6 w-6 cursor-pointer" /> : <FiAlignRight className="h-6 w-6 cursor-pointer" />}
         </button>
         <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
     </header>

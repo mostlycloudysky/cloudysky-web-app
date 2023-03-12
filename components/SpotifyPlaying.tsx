@@ -67,7 +67,6 @@ function SpotifyPlaying({text}: Props) {
 
    return (
     <>
-      
       { data ? (
         <>
           <MusicPlaying />
