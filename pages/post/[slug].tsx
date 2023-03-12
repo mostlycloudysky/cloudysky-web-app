@@ -17,7 +17,7 @@ import { LinkedinShareButton,
          RedditIcon, 
          TwitterIcon} from 'react-share'
 import Footer from '../../components/Footer'
-
+import ReadingTime from '../../components/ReadingTime'
 
 interface Props {
   post: DetailedPost;
@@ -41,7 +41,12 @@ function Post({post}: Props) {
               <p className=' text-sm font-normal text-skin-base leading-5 pb-1'><span className=''>{new Date(post._createdAt).toLocaleDateString() }</span>, Published in Medium, DevTo and HashNode</p> 
             </div>
             <div className=' flex items-center space-x-2'>
-              <p className=' text-sm font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>.2 mins read</span></p> 
+            
+                  <span className="h-4 w-4 bg-gray-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                    <span className="h-2 w-2 bg-gray-500 rounded-full"></span>
+                  </span>
+                  <p className='text-sm'><ReadingTime blocks={post.body} /></p>
+           
               <div className='flex items-center space-x-1 mr-5 pr-5'>
                 <EyeIcon className='h-5 w-5 text-gray-600 dark:text-gray-100' /> 
                   <p className=' text-sm font-normal text-skin-base leading-5 pt-1 pb-1'><span className=''>200</span></p> 

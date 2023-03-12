@@ -21,6 +21,8 @@ interface Props {
 
 export default function Home({ posts, snippets }: Props) {
 
+  console.log('Home page..')
+  console.log(posts)
   return (
     <Layout title='Home'>
       <Profile />
@@ -118,6 +120,7 @@ export const getServerSideProps = async () => {
       description,
       mainImage,
       slug, 
+      body,
   }`;
 
   const snippetsQuery = `*[_type == 'snippets' && Featured == true]{
