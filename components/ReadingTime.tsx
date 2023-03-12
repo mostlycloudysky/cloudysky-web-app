@@ -7,7 +7,7 @@ const ReadingTime = ({blocks}) => {
     const minutes = Math.ceil(stats.minutes);
     console.log('minutes', minutes)
     return (
-        <span>
+        <span className='text-gray-500 text-sm'>
         {minutes} min{minutes === 1 ? '' : 's'} read
         </span>
     );
