@@ -7,7 +7,9 @@ import {MoonIcon} from '@heroicons/react/solid'
 import {useTheme} from 'next-themes'
 import {useState, useEffect} from 'react'
 import SpotifyPlaying from './SpotifyPlaying';
-
+import MobileMenu from './MobileMenu';
+import { FiAlignRight, FiX } from 'react-icons/fi';
+FiAlignRight
 interface Props {
   href: string,
   text: string
@@ -20,13 +22,20 @@ function NavItem({href, text}: Props) {
   return (
     <Link 
       href={href}
-      className={cn(isActive ? 'text-lg text-green-600' : 'text-lg text-gray-600 dark:text-gray-300 cursor-pointer  hover:text-green-600')} >
+      className={cn(isActive ? 'text-xl font-semibold text-green-600' : 'text-xl font-semibold text-gray-600 dark:text-gray-300 cursor-pointer  hover:text-green-600')} >
       <span className="">{text}</span>
     </Link>
   )
 }
 
 function Header() {
+
+// Mobile menu code
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
   
 // Dark mode toggle code
   const {systemTheme, theme, setTheme} = useTheme();
@@ -69,18 +78,24 @@ function Header() {
   return (
     <>
      <header className='flex items-center justify-between pl-5 pt-5  pr-5'>
-        <div className='flex items-center space-x-5 flex-shrink-0 py-5'>
+        <div className='hidden md:flex items-center space-x-5 flex-shrink-0 py-5'>
           <NavItem href='/' text='Home' />
           <NavItem href='/blogs' text='Blogs' />
           <NavItem href='/snippets' text='Snippets' />
           {/* <NavItem href='/visitor' text='Visitors Log' />    */}
         </div>
-          <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-4'>
             <SpotifyPlaying text='Playlist' />
           <div>{renderThemeChanger()}</div>
         </div>
+        <button
+          className="md:hidden text-white focus:outline-none ml-auto text-right"
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? <FiX className="h-6 w-6" /> : <FiAlignRight className="h-6 w-6" />}
+        </button>
+        <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
     </header>
-      <div className='border-b-[1px] border-muted ml-5 mr-5 '></div>
     </>
    
   )
