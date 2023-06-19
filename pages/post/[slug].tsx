@@ -31,10 +31,14 @@ function Post({post}: Props) {
     <Layout>
         {/* <Header /> */}
         <div className=' pl-5 pr-5 pt-5'>
-          <img 
-            src={urlFor(post.mainImage).url()!}
-            className='w-full h-40 object-cover mb-2'
-          /> 
+          <div className='w-full h-full'>
+            <img 
+              src={urlFor(post.mainImage).url()!}
+              className='w-full h-full object-cover mb-2'
+              alt={post.title}
+            /> 
+          </div>
+
           <h4 className='w-full mb-1 text-2xl font-medium text-gray-900 md:text-2xl dark:text-gray-100'>{post.title}</h4>
           <div className=' flex items-center justify-between  '>
             <div className=' flex items-center'>
