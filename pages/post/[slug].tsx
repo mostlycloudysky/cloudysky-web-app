@@ -39,7 +39,7 @@ function Post({post}: Props) {
             /> 
           </div>
 
-          <h4 className='w-full mb-1 text-2xl font-medium text-gray-900 md:text-2xl dark:text-gray-100'>{post.title}</h4>
+          <p className='text-lg md:text-xl font-bold w-full text-gray-900 dark:text-gray-100 tracking-tight cursor-pointer hover:underline decoration-green-600 '>{post.title}</p>
           <div className=' flex items-center justify-between  '>
             <div className=' flex items-center'>
               <p className=' text-sm font-normal text-skin-base leading-5 pb-1'><span className=''>{new Date(post._createdAt).toLocaleDateString() }</span>, Published in Medium, DevTo and HashNode</p> 
