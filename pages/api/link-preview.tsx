@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     let { url } = req.query;
     const { data } = await mql(url, {
       screenshot: true,
-    //   apiKey: process.env.NEXT_MICROLINK_API_KEY, // I am using the premium version, but you can remove this line if you want to use the free tier
+    //   apiKey: process.env.NEXT_MICROLINK_API_KEY, 
       // @ts-ignore
       overlay: {
         background:
