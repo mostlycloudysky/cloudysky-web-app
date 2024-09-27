@@ -1,4 +1,4 @@
-# Cloudysky Blog Portal
+# Cloudysky Blogs Portal
 
 ![Cloudysky Architecture](Cloudysky.png)
 
