@@ -3,7 +3,7 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['iad.microlink.io', 'i.scdn.co', 'images-ak.spotifycdn.com'],
+    domains: ['iad.microlink.io', 'i.scdn.co', 'image-cdn-ak.spotifycdn.com'],
   },
   typescript: {
     // !! WARN !!
